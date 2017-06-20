@@ -1,0 +1,178 @@
+/*通用样式设置*/
+*{
+	font-size: 14px;
+	font-family: '黑体';
+	color: #522a06;
+	margin: 0px;
+	padding: 0px;
+	background-color:  rgb(245, 212, 217);
+}
+ul li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+a:link{
+	color: #522a06;
+}
+a:hover{
+	text-decoration: underline;
+}
+img{
+	border: 0px;
+}
+body{
+	margin: 0 auto;
+}
+p{
+	text-indent: 2em;
+	line-height: 2em;
+}
+/*header 样式 */
+.a{
+	width:100%;
+	height: 1000px;
+	margin: 0 auto;
+
+}
+.header{
+	height: 245px;
+	background-repeat: no-repeat;
+}
+.banner{
+	width: 1000px;
+	height: 200px;
+	text-align: center;
+	padding-left:130px;
+}
+.nav{
+	height: 40px;
+}
+.nav-body{
+	width: 1000px;
+	margin: 0 auto;
+}
+.nav-content{
+	width: 800px;
+	float: left;
+	color: #00BFFF;
+}
+.nav-content a{
+	line-height: 40px;
+	font-weight: 900;
+	color:#00BFFF;
+	font-weight: 900;
+	font-size:16px;
+}
+.b{
+	color: #000
+	font-size:16px;}
+a.c:hover{
+	color: #000;
+	text-decoration: none;
+	font-size:16px;
+}
+.nav-search{
+	float: left;
+	line-height: 40px;
+}
+.e{
+	width: 44px;
+	height: 21px;
+	background: #89cff0 ;
+	color: #fff;
+	border: 1px solid #f8f5ee;
+}
+
+/*concent 样式 */
+.concent{
+	width: 1000px;
+	margin: 0 auto;
+}
+.concent-right{
+	width: 65%;
+	float: left;
+}
+.c1{
+	margin: 10px 0 10px 60px;
+
+}
+.c2{
+	margin: 15px 0 10px 0;
+
+}
+.c3{
+	color: rgb(104, 104, 104);
+	font-size: 20px;
+	font-weight: 400;
+	font-family: '微软雅黑';
+}
+.c4{
+	background: url(../images/6.jpg);
+	background-size: 650px 450px;
+	width: 650px;
+	height: 450px;
+}
+.concent-left{
+	width: 30%;
+	float: left;
+	margin: 10px 0 0 50px;
+
+}
+.c8{
+	margin: 10px 0 10px 10px;
+
+}
+.c8 ul li{
+	line-height: 2em;
+}
+.c9{
+	margin: 5px 0 0 0;
+	width: 250px;
+	height: 200px;
+	background: url(../images/4.jpg);
+	background-size: 250px 200px;
+}
+.c11{
+	margin: 5px 0 0 0;
+	width: 250px;
+	height: 200px;
+	background: url(../images/2.jpg);
+	background-size: 250px 200px;
+}
+.c12{
+	font-size: 16px;
+	color: red;
+	margin: 5px 0 0 80px;
+}
+
+
+
+
+
+
+
+
+/*footer 样式*/
+.footer{
+	width: 100%;
+	height: 105px;
+	clear: both;
+	margin: 0px;
+
+}
+.footer div ul li {
+	display: inline;
+	font-weight: 700;
+}
+.b6 ul{
+	text-align: center;
+	padding: 20px 0 10px 0;
+}
+.b6{
+	text-align: center;
+}
+body{
+	background: #ffefd5;
+}
