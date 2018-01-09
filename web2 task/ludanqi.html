@@ -1,0 +1,297 @@
+<!-- 本次作业涉及到了导航条效果、弹出层效果、滚动图片效果、幻灯片效果和鼠标跟随效果。在导航条下设有下拉菜单，下拉菜单中鼠标经过一级菜单，弹出二级菜单，经过二级菜单，弹出三级菜单。鼠标跟随效果使鼠标带有“王者荣耀”字样。网页正上方有五个星星，鼠标经过星星可切换背景图片实现幻灯片效果,切换同时星星被点亮 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>期末作业</title>
+	<style>
+		*{
+			font-size:12px;
+			padding: 0px;
+			margin: 0px;
+		}
+	body{
+			background: url(images/f.jpeg) no-repeat;
+			background-size: 1270px 680px;
+		}
+		/*鼠标跟随*/
+		#tip{
+	  		background-color:lightpink;
+	  		display:none;
+	  		padding:5px;
+      		position:absolute;
+		}
+		#tool{
+	  		color:brown;
+	  		font-size:14px;
+	  		font-weight:bold;
+		}
+		/*幻灯片效果*/
+		#nav1{
+			height: 50px;
+			width: 50px;
+			float: left;
+		}
+		#nav2{
+			height: 50px;
+			width: 50px;
+			float: left;
+		}
+		#nav3{
+			height: 50px;
+			width: 50px;
+			float: left;
+		}
+		#nav4{
+			height: 50px;
+			width: 50px;
+			float: left;
+		}
+		#nav5{
+			height: 50px;
+			width: 50px;
+			float: left;
+		}
+		#nav{
+			padding: 0 0 0 500px;
+			margin: 0px;
+		}
+		/*下拉菜单*/
+		#menu {
+			height: 200px;
+			width: 535px;
+			position: relative;
+			margin: 50px 0px;
+			float:left;
+			padding: 10px 0 0 240px;
+		}
+		#menu ul {
+			list-style: none;
+			margin: 0px;
+			padding:0px;
+		}
+		#menu ul li {
+			height: 32px;
+			width: 104px;
+			border: 1px solid #CCC;
+			float: left;
+		}
+		#menu ul li a {
+			display: block;
+			height: 32px;
+			width: 104px;
+			font: 16px/30px "黑体";
+			color: brown;
+			background: #69F;
+			text-align: center;
+			text-decoration: none;
+		}
+		#menu ul li a:hover {
+			font-weight: bold;
+			color: #F60;
+			background: #93B6FF;
+		}
+		#menu ul li ul {
+			display: none;
+			margin: 0px;
+			width: 105px;
+		}
+		#menu ul li:hover ul {
+			display: block;
+			position: relative;
+			left: 0px;
+			top: 0px;
+		}
+		#menu ul li:hover ul li a {
+			background: #C8DAFF;
+			font-size: 14px;
+		}
+		#menu ul li:hover ul li a:hover {
+			background: #86ADFF;
+			color: #000066;
+		}
+		#nav>li{
+			position:relative;
+		}
+		#nav>li>ul.level1{
+			position:absolute;
+		}
+		#nav>li>ul.level1>li>ul.level2{
+			position:absolute;
+		}
+		#nav>li>ul.level1{
+			display:none;
+		}
+		#nav>li>ul.level1>li>ul.level2{
+			display:none;
+		}
+		#nav>li:hover>ul.level1{
+			display:block;
+		}
+		#nav>li>ul.level1>li:hover>ul.level2{
+			display:block;
+		}	
+		/*滚动图片*/
+		span img{
+			width:291px;
+			height:134px;
+			margin-left:5px;
+		}
+		#picScroll{
+			margin:0 auto;
+			height:136px;
+			border:1px solid #C90;
+			white-space:nowrap;
+			width:870px;
+			overflow:hidden;
+		}
+	</style>
+</head>
+<body id='bd'>
+	<div id="nav">
+    	<div id="nav1"><img src="images/star0.png" title="1"></div>
+    	<div id="nav2"><img src="images/star0.png" title="2"></div>
+    	<div id="nav3"><img src="images/star0.png" title="3"></div>
+    	<div id="nav4"><img src="images/star0.png" title="4"></div>
+    	<div id="nav5"><img src="images/star0.png" title="5"></div>
+	</div>
+	<div id="tip">
+	  	<div id="tool">欢迎来到王者荣耀</div>
+	</div>
+<div id="menu">
+  <ul id="nav">
+    <li><a href="#">游戏资料</a>
+      <ul class="level1">
+        <li><a href="#">版本介绍</a></li>
+        <li><a href="#">游戏介绍</a></li>
+        <li><a href="#">游戏壁纸</a></li>
+        <li><a href="#">英雄资料</a>
+        	<ul class="level2">
+        		<li><a href="#">坦克</a></li>
+        		<li><a href="#">射手</a></li>
+        		<li><a href="#">法师</a></li>
+        		<li><a href="#">突进</a></li>
+         		<li><a href="#">刺客</a></li>
+        		<li><a href="#">辅助</a></li>       		
+        	</ul>        	
+        </li>
+      </ul>
+    </li>
+    <li><a href="#">攻略中心</a>
+       <ul>
+        <li><a href="#">英雄攻略</a></li>
+        <li><a href="#">视频中心</a></li>
+      </ul>
+     </li>
+    <li><a href="#">赛事中心</a>
+       <ul>
+        <li><a href="#">KPL职业联赛</a></li>
+        <li><a href="#">KCC王者冠军杯</a></li>
+        <li><a href="#">KOC王者城市赛</a></li>
+        <li><a href="#">TGA大奖赛</a></li>
+        <li><a href="#">王者高校联赛</a></li>
+      </ul>
+     </li>
+    <li><a href="#">商城/合作</a>
+        <ul>
+        <li><a href="#">万千世界</a></li>
+        <li><a href="#">王者信用卡</a></li>
+        <li><a href="#">王者文化站</a></li>
+        <li><a href="#">百态王者</a></li>
+      </ul>
+    </li>
+    <li><a href="#">社区互动</a>
+       <ul>
+        <li><a href="#">官方助手</a></li>
+        <li><a href="#">官方微博</a></li>
+        <li><a href="#">微信公众号</a></li>
+        <li><a href="#">手Q部落</a></li>
+      </ul>
+   </ul>
+</div>
+<!-- 滚动图片 -->
+<div id="picScroll">
+	<span id="picScroll1">
+		<img src="images/1.jpg" />
+		<img src="images/2.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/4.jpg" />
+	</span>
+	<span id="picScroll2">
+		<img src="images/1.jpg" />
+		<img src="images/2.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/4.jpg" />
+	</span>
+ </div> 
+<script>
+	var nav=document.getElementById('nav');
+	var img=document.getElementsByTagName('img');
+	var bd=document.getElementById('bd');
+	for (var i = 0; i < img.length; i++) {
+		img[i].onmouseover=function(){
+			switch(this.title){
+				case '1':
+					bd.style.backgroundImage="url(images/a.jpg)";
+					img[0].setAttribute('src','images/star2.png');
+					break;
+				case '2':
+					bd.style.backgroundImage="url(images/b.jpeg)";
+					img[1].setAttribute('src','images/star2.png');
+					break;
+				case '3':
+					bd.style.backgroundImage="url(images/c.jpeg)";
+					img[2].setAttribute('src','images/star2.png');
+					break;
+				case '4':
+					bd.style.backgroundImage="url(images/d.jpg)";
+					img[3].setAttribute('src','images/star2.png');
+					break;
+				case '5':
+					bd.style.backgroundImage="url(images/e.jpeg)";
+					img[4].setAttribute('src','images/star2.png');
+					break;
+			}
+		}
+	};
+	//鼠标跟随
+	bd.onmousemove=function(a)
+	{
+		var tip=document.getElementById('tip');
+		tip.style.display="block";
+		tip.style.left=a.clientX+"px";
+		tip.style.top=a.clientY+"px";
+	};
+	//滚动图片
+	var id;
+	var b=document.getElementById('picScroll')
+	var c=document.getElementById('picScroll1')
+	function changToLeft()
+	{	
+		if (b.scrollLeft>c.offsetWidth) 
+		{
+			b.scrollLeft=0;
+		}
+		else
+		{
+			b.scrollLeft+=1;
+		}
+	}
+	function a()
+	{
+		id=setInterval(changToLeft,10);
+	}	
+
+	a();
+
+	b.onmouseover=function()
+	{
+		clearInterval(id);
+	}
+	b.onmouseout=function()
+	{
+		a();
+	}	
+</script>
+</body>
+</html>
